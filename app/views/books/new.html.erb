@@ -1,2 +1,46 @@
 <h1>Nowa książka</h1>
 <!-- Rails form helper. -->
+
+<%= form_for @book do |f| %>
+  <div>
+    Tytuł
+    <!-- <%= f.label :title %> -->
+    <br>
+    <%= f.text_field :title %>
+  </div>
+
+    <div>
+        <!-- <%= f.label :author %> -->
+        Autor
+        <br>
+        <%= f.text_field :author %>
+  </div>
+
+    <div>
+        Opis
+        <!--- <%= f.label :description %> -->
+        <br>
+        <%= f.text_area :description %>
+  </div>
+
+    <div>
+        Cena
+        <!-- <%= f.label :price %> -->
+        <br>
+        <%= f.text_field :price %>
+  </div>
+
+    <div>
+        Ilość
+        <!-- <%= f.label :stock_quantity %> -->
+        <br>
+        <%= f.text_field :stock_quantity %>
+    </div>
+    <br>
+    <div>
+
+        <%= f.submit "Dodaj książkę" %>
+    
+    </div>
+
+<% end %>

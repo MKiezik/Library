@@ -1,5 +1,7 @@
 <h2>Dostępne książki</h2>
 
+<p><%= link_to 'Dodaj książkę', new_book_path %></p>
+
 <% @books.each do |book| %>
     <section>
         <h3><%=link_to book.title, book_path(book) %></h3>  <!-- <a href="/products/:id">title</a> -->

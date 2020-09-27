@@ -12,11 +12,26 @@ class BooksController < ApplicationController
   # app/views/books/show.html.erb
 
   def new
+    @book = Book.new
   end
   # app/views/books/new.html.erb
 
 
-  def create
+  def create  
+    # @book = Book.new(title: '', author: '' ... )  use hash from form
+    # @book = Book.new(params[:book]) [:title/author/description]
+
+    # manage permission to access fields that should be private, e.g admin privileges
+    @book = Book.new(book_params) # book_params method instead of directly using params hash
+                                  # 
+
+    if @book.save
+      redirect_to  action: :index
+    else
+      render :new #render form associated with new
+    
+    end
+
   end
 
   def edit
@@ -27,4 +42,11 @@ class BooksController < ApplicationController
 
   def destroy
   end
+
+private
+  def book_params # define parameters that I have access to, book_params instead of directly using hash params[:book]
+    params.require(:book).permit(:title, :author, :description, :price, :stock_quantity)
+      
+  end
+    
 end
