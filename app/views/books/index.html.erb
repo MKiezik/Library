@@ -1,0 +1,8 @@
+<h1>Biblioteka</h1>
+
+<% @books.each do |book| %>
+    <section>
+        <h3><%= book.title %></h3>
+        <p><%= book.description %></p>
+</section>
+<% end %>
