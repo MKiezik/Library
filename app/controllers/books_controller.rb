@@ -45,6 +45,9 @@ class BooksController < ApplicationController
   end # Either redirect or render the new view
 
   def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to root_path
   end # Always redirect to the root after deleted
 
 private

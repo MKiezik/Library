@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get   'books/:id/edit', to: 'books#edit',   as: 'edit_book'
     patch 'books/:id',      to: 'books#update'
 
+    delete 'books/:id',     to: 'books#destroy', as: 'delete_book'
+
     root 'books#index'
 
     # root command

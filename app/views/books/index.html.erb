@@ -7,6 +7,8 @@
         <hr>
         <h3><%=link_to book.title, book_path(book) %></h3>  <!-- <a href="/products/:id">title</a> -->
         <p><%= book.description %></p>
-        <%= link_to 'Edytuj', edit_book_path(book) %>
+            <%= link_to 'Edytuj', edit_book_path(book) %>
+            <%= link_to 'delete', delete_book_path(book), method: :delete, data: {confirm: 'Czy na pewno chcesz usunąć?'}  %> 
+            <!-- link = GET request, method: :delete --> 
     </section>
 <% end %>
