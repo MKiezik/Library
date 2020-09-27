@@ -9,9 +9,12 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
+  # app/views/books/show.html.erb
 
   def new
   end
+  # app/views/books/new.html.erb
+
 
   def create
   end
