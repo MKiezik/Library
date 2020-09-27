@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   # view will have access to the @books variable
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def new
