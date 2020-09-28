@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
     root 'books#index'
 
+    get '/auth/:provider/callback', to: 'sessions#omniauth' # comming back route
+
     # root command
     # get "/", to: 'books#index', as: 'root'
 
