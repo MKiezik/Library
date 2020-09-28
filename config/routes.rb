@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
     get   'books',          to: 'books#index',  as: 'books'  # get 'URL', to: 'controller#action', as: 'route_name'
     get   'books/new',      to: 'books#new',    as: 'new_book'
     get   'books/:id',      to: 'books#show',   as: 'book'
